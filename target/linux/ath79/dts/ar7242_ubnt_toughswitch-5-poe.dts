@@ -1,0 +1,69 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+/dts-v1/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+
+#include "ar7242.dtsi"
+
+/ {
+	compatible = "ubnt,toughswitch-5-poe", "qca,ar7242";
+	model = "Ubiquiti Networks Toughswitch 5 POE";
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x4000000>;
+	};
+};
+
+&spi {
+	status = "okay";
+	num-cs = <1>;
+
+	flash@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "jedec,spi-nor";
+		reg = <0>;
+		spi-max-frequency = <25000000>;
+
+		partitions {
+			compatible = "fixed-partitions";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			partition@0 {
+				reg = <0x0 0x40000>;
+				label = "u-boot";
+				read-only;
+			};
+
+			partition@40000 {
+				reg = <0x40000 0x10000>;
+				label = "u-boot-env";
+				read-only;
+			};
+
+			partition@50000 {
+				reg = <0x50000 0x760000>;
+				label = "firmware";
+			};
+
+			partition@7b0000 {
+				reg = <0x7b0000 0x40000>;
+				label = "cfg";
+				read-only;
+			};
+
+			partition@7f0000 {
+				reg = <0x7f0000 0x10000>;
+				label = "EEPROM";
+				read-only;
+			};
+		};
+	};
+};
+
+&uart {
+	status = "okay";
+};
