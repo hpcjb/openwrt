@@ -107,7 +107,7 @@ endef
 TARGET_DEVICES += ubnt-unifiac-lite
 
 define Device/ubnt_toughswitch-5-poe
-  $(Device/ubnt-bz)
+  $(Device/ubnt-sw)
   DEVICE_TITLE := Ubiquiti Networks Toughswitch 5 POE
   SUPPORTED_DEVICES += ubnt,toughswitch-5-poe toughswitch-5-poe
 endef
