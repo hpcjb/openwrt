@@ -105,6 +105,7 @@
 &eth1 {
 	status = "okay";
 
+	mtd-mac-address = <&eeprom 0x6>;
 	phy-handle = <&phy1>;
 	phy-mode = "mii";
 
@@ -112,6 +113,4 @@
 		speed = <100>;
 		full-duplex;
 	};
-
-	mtd-mac-address = <&eeprom 0x6>;
 };
