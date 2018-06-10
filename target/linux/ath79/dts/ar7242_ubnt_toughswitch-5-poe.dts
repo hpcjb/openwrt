@@ -98,8 +98,8 @@
 &mdio1 {
 	status = "okay";
 
-	phy1: ethernet-phy@1 {
-		reg = <1>;
+	phy4: ethernet-phy@4 {
+		reg = <4>;
 		phy-mode = "mii";
 	};
 };
@@ -116,7 +116,7 @@
 	status = "okay";
 
 	mtd-mac-address = <&eeprom 0x6>;
-	phy-handle = <&phy1>;
+	phy-handle = <&phy4>;
 	phy-mode = "mii";
 
 	fixed-link {
