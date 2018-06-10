@@ -92,17 +92,27 @@
 	phy0: ethernet-phy@0 {
 		reg = <0>;
 		phy-mode = "rgmii";
+
+		qca,ar8327-initvals = <
+			0x04 0x07600000 /* PORT0 PAD MODE CTRL */
+			0x10 0x80000080 /* POWER_ON_STRIP */
+			0x50 0xc737c737 /* LED_CTRL0 */
+			0x54 0x00000000 /* LED_CTRL1 */
+			0x58 0x00000000 /* LED_CTRL2 */
+			0x5c 0x0030c300 /* LED_CTRL3 */
+			0x7c 0x0000007e /* PORT0_STATUS */
+			>;
 	};
 };
 
-&mdio1 {
+/*&mdio1 {
 	status = "okay";
 
 	phy4: ethernet-phy@4 {
 		reg = <4>;
 		phy-mode = "mii";
 	};
-};
+};*/
 
 &eth0 {
 	status = "okay";
@@ -112,7 +122,7 @@
 	mtd-mac-address = <&eeprom 0x0>;
 };
 
-&eth1 {
+/*&eth1 {
 	status = "okay";
 
 	mtd-mac-address = <&eeprom 0x6>;
@@ -123,4 +133,4 @@
 		speed = <100>;
 		full-duplex;
 	};
-};
+};*/
