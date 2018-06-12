@@ -108,14 +108,15 @@
 	};
 };
 
-/*&mdio1 {
+&mdio1 {
 	status = "okay";
 
-	phy4: ethernet-phy@4 {
-		reg = <4>;
+	phy-mask = <18>;
+	phy18: ethernet-phy@18 {
+		reg = <18>;
 		phy-mode = "mii";
 	};
-};*/
+};
 
 &eth0 {
 	status = "okay";
@@ -125,15 +126,15 @@
 	mtd-mac-address = <&eeprom 0x0>;
 };
 
-/*&eth1 {
+&eth1 {
 	status = "okay";
 
 	mtd-mac-address = <&eeprom 0x6>;
-	phy-handle = <&phy4>;
+	phy-handle = <&phy18>;
 	phy-mode = "mii";
 
 	fixed-link {
 		speed = <100>;
 		full-duplex;
 	};
-};*/
+};
