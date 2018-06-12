@@ -111,9 +111,9 @@
 &mdio1 {
 	status = "okay";
 
-	phy-mask = <0>;
+	phy-mask = <2>;
 	phy1: ethernet-phy@1 {
-		reg = <0>;
+		reg = <2>;
 		phy-mode = "mii";
 	};
 };
