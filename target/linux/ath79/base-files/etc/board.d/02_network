@@ -65,7 +65,7 @@ ath79_setup_interfaces()
 		;;
 	"ubnt,toughswitch-5-poe")
 		ucidef_add_switch "switch0" \
-			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan"
+			"0@eth0" "1:wan" "2:lan" "3:lan" "4:lan" "5:lan"
 		
 		ucidef_set_interface_lan "eth1" "dhcp"
 		;;
