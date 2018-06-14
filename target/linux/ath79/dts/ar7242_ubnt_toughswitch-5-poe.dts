@@ -72,6 +72,15 @@
 			};
 		};
 	};
+
+	ssr: gpio2@0 {
+		compatible = "fairchild,74hc595";
+		reg = <1>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		registers-number = <2>;
+		spi-max-frequency = <100000>;
+	};
 };
 
 &uart {
