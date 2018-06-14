@@ -29,6 +29,7 @@
 &spi {
 	status = "okay";
 	num-cs = <2>;
+	cs-gpios = <0>, <&gpio 0 0>;
 
 	flash@0 {
 		#address-cells = <1>;
