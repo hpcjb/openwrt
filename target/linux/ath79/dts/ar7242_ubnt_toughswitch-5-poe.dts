@@ -113,6 +113,7 @@
 &mdio0 {
 	status = "okay";
 
+	phy-mask = <18>;
 	phy0: ethernet-phy@0 {
 		reg = <0>;
 		phy-mode = "rgmii";
@@ -131,7 +132,6 @@
 		>;
 	};
 
-	phy-mask = <18>;
 	phy18: ethernet-phy@18 {
 		reg = <18>;
 		phy-mode = "mii";
