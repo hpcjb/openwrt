@@ -153,8 +153,8 @@
 	phy-mode = "mii";
 	phy-handle = <&phy12>;
 
-	fixed-link {
+	/*fixed-link {
 		speed = <100>;
 		full-duplex;
-	};
+	};*/
 };
