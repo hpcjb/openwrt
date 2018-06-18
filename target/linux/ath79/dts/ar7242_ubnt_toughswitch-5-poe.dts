@@ -132,10 +132,10 @@
 		>;
 	};
 
-	phy12: ethernet-phy@12 {
+	/*phy12: ethernet-phy@12 {
 		reg = <12>;
 		phy-mode = "mii";
-	};
+	};*/
 };
 
 &eth0 {
