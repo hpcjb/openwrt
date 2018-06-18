@@ -132,10 +132,10 @@
 		>;
 	};
 
-	/*phy12: ethernet-phy@12 {
-		reg = <12>;
+	phy18: ethernet-phy@18 {
+		reg = <18>;
 		phy-mode = "mii";
-	};*/
+	};
 };
 
 &eth0 {
@@ -151,10 +151,5 @@
 
 	mtd-mac-address = <&eeprom 0x6>;
 	phy-mode = "mii";
-	/*phy-handle = <&phy12>;*/
-
-	/*fixed-link {
-		speed = <100>;
-		full-duplex;
-	};*/
+	phy-handle = <&phy18>;
 };
