@@ -152,4 +152,9 @@
 	mtd-mac-address = <&eeprom 0x6>;
 	phy-mode = "mii";
 	phy-handle = <&phy18>;
+	
+	fixed-link {
+		speed = <100>;
+		full-duplex;
+	};
 };
