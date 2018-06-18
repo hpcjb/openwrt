@@ -138,16 +138,6 @@
 	};
 };
 
-/*&mdio1 {
-	status = "okay";
-
-	phy-mask = <18>;
-	phy1: ethernet-phy@1 {
-		reg = <0>;
-		phy-mode = "mii";
-	};
-};*/
-
 &eth0 {
 	status = "okay";
 
