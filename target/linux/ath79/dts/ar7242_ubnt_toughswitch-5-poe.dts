@@ -133,7 +133,7 @@
 	};
 
 	phy18: ethernet-phy@18 {
-		reg = <18>;
+		reg = <1>;
 		phy-mode = "mii";
 	};	
 };
