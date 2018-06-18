@@ -113,7 +113,7 @@
 &mdio0 {
 	status = "okay";
 
-	phy-mask = <18>;
+	phy-mask = <12>;
 	phy0: ethernet-phy@0 {
 		reg = <0>;
 		phy-mode = "rgmii";
@@ -132,8 +132,8 @@
 		>;
 	};
 
-	phy18: ethernet-phy@18 {
-		reg = <18>;
+	phy12: ethernet-phy@12 {
+		reg = <12>;
 		phy-mode = "mii";
 	};
 };
@@ -151,5 +151,5 @@
 
 	mtd-mac-address = <&eeprom 0x6>;
 	phy-mode = "mii";
-	phy-handle = <&phy18>;
+	phy-handle = <&phy12>;
 };
