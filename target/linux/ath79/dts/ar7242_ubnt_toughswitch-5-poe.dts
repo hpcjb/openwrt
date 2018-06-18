@@ -151,7 +151,7 @@
 
 	mtd-mac-address = <&eeprom 0x6>;
 	phy-mode = "mii";
-	phy-handle = <&phy12>;
+	/*phy-handle = <&phy12>;*/
 
 	/*fixed-link {
 		speed = <100>;
