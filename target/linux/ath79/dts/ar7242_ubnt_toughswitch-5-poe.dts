@@ -131,11 +131,6 @@
 			0x0094 0x000007e /* PORT6_STATUS */
 		>;
 	};
-
-	phy18: ethernet-phy@18 {
-		reg = <1>;
-		phy-mode = "mii";
-	};	
 };
 
 /*&mdio1 {
@@ -160,11 +155,4 @@
 	status = "okay";
 
 	mtd-mac-address = <&eeprom 0x6>;
-	phy-handle = <&phy18>;
-	phy-mode = "mii";
-
-	fixed-link {
-		speed = <100>;
-		full-duplex;
-	};
 };
