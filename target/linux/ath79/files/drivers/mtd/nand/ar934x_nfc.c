@@ -19,6 +19,7 @@
 #include <linux/delay.h>
 #include <linux/slab.h>
 #include <linux/version.h>
+#include <linux/of.h>
 
 #include <linux/platform/ar934x_nfc.h>
 
