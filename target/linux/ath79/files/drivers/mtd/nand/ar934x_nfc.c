@@ -1570,12 +1570,18 @@ ar934x_nfc_remove(struct platform_device *pdev)
 	return 0;
 }
 
+static const struct of_device_id ar934x_nfc_of_match[] = {
+	{ .compatible = "qca,ar934x-nfc" },
+	{ /* sentinel */ },
+};
+
 static struct platform_driver ar934x_nfc_driver = {
 	.probe		= ar934x_nfc_probe,
 	.remove		= ar934x_nfc_remove,
 	.driver = {
 		.name	= AR934X_NFC_DRIVER_NAME,
 		.owner	= THIS_MODULE,
+		.of_match_table = ar934x_nfc_of_match,
 	},
 };
 
