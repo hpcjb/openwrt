@@ -98,7 +98,7 @@ define Device/cilab_meshpoint
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	DEVICE_TITLE := Crisis Innovation Lab Meshpoint
-	DEVICE_PACKAGES := kmod-iio-bmp280-i2c kmod-hwmon-ina2xx kmod-rtc-pcf2127
+	DEVICE_PACKAGES := kmod-i2c-gpio kmod-iio-bmp280-i2c kmod-hwmon-core kmod-hwmon-ina2xx kmod-rtc-pcf2127
 endef
 TARGET_DEVICES += cilab_meshpoint
 
