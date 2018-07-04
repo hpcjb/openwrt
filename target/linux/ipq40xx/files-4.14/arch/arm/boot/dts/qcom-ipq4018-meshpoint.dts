@@ -100,7 +100,7 @@
 		
 		i2c-gpio {
 			compatible = "i2c-gpio";
-			gpios = <&tlmm 3 GPIO_ACTIVE_HIGH /* sda */
+			gpios = <&tlmm 0 GPIO_ACTIVE_HIGH /* sda */
 		         	 &tlmm 4 GPIO_ACTIVE_HIGH /* scl */
 		        	 >;
 			#address-cells = <1>;
