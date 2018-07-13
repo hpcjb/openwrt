@@ -91,8 +91,6 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 
 (limited to 'drivers/net/usb/ipheth.c')
 
-diff --git a/drivers/net/usb/ipheth.c b/drivers/net/usb/ipheth.c
-index d49c710..ca71f6c 100644
 --- a/drivers/net/usb/ipheth.c
 +++ b/drivers/net/usb/ipheth.c
 @@ -149,6 +149,7 @@ struct ipheth_device {
@@ -103,7 +101,7 @@ index d49c710..ca71f6c 100644
  };
  
  static int ipheth_rx_submit(struct ipheth_device *dev, gfp_t mem_flags);
-@@ -259,7 +260,7 @@ static void ipheth_rcvbulk_callback(struct urb *urb)
+@@ -259,7 +260,7 @@ static void ipheth_rcvbulk_callback(stru
  
  	dev->net->stats.rx_packets++;
  	dev->net->stats.rx_bytes += len;
@@ -112,7 +110,7 @@ index d49c710..ca71f6c 100644
  	netif_rx(skb);
  	ipheth_rx_submit(dev, GFP_ATOMIC);
  }
-@@ -281,14 +282,21 @@ static void ipheth_sndbulk_callback(struct urb *urb)
+@@ -281,14 +282,21 @@ static void ipheth_sndbulk_callback(stru
  		__func__, status);
  
  	dev_kfree_skb_irq(dev->tx_skb);
@@ -136,7 +134,7 @@ index d49c710..ca71f6c 100644
  	retval = usb_control_msg(udev,
  			usb_rcvctrlpipe(udev, IPHETH_CTRL_ENDP),
  			IPHETH_CMD_CARRIER_CHECK, /* request */
-@@ -303,11 +311,14 @@ static int ipheth_carrier_set(struct ipheth_device *dev)
+@@ -303,11 +311,14 @@ static int ipheth_carrier_set(struct iph
  		return retval;
  	}
  
@@ -154,7 +152,7 @@ index d49c710..ca71f6c 100644
  	return 0;
  }
  
-@@ -387,7 +398,6 @@ static int ipheth_open(struct net_device *net)
+@@ -387,7 +398,6 @@ static int ipheth_open(struct net_device
  		return retval;
  
  	schedule_delayed_work(&dev->carrier_work, IPHETH_CARRIER_CHECK_TIMEOUT);
@@ -162,7 +160,7 @@ index d49c710..ca71f6c 100644
  	return retval;
  }
  
-@@ -491,7 +501,7 @@ static int ipheth_probe(struct usb_interface *intf,
+@@ -491,7 +501,7 @@ static int ipheth_probe(struct usb_inter
  	dev->udev = udev;
  	dev->net = netdev;
  	dev->intf = intf;
@@ -171,7 +169,7 @@ index d49c710..ca71f6c 100644
  	/* Set up endpoints */
  	hintf = usb_altnum_to_altsetting(intf, IPHETH_ALT_INTFNUM);
  	if (hintf == NULL) {
-@@ -542,7 +552,9 @@ static int ipheth_probe(struct usb_interface *intf,
+@@ -542,7 +552,9 @@ static int ipheth_probe(struct usb_inter
  		retval = -EIO;
  		goto err_register_netdev;
  	}
@@ -182,5 +180,3 @@ index d49c710..ca71f6c 100644
  	dev_info(&intf->dev, "Apple iPhone USB Ethernet device attached\n");
  	return 0;
  
--- 
-cgit v1.1

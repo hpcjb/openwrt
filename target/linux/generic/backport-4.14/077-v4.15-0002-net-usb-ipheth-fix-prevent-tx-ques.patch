@@ -20,11 +20,9 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 
 (limited to 'drivers/net/usb/ipheth.c')
 
-diff --git a/drivers/net/usb/ipheth.c b/drivers/net/usb/ipheth.c
-index ca71f6c..7275761 100644
 --- a/drivers/net/usb/ipheth.c
 +++ b/drivers/net/usb/ipheth.c
-@@ -291,12 +291,15 @@ static void ipheth_sndbulk_callback(struct urb *urb)
+@@ -291,12 +291,15 @@ static void ipheth_sndbulk_callback(stru
  
  static int ipheth_carrier_set(struct ipheth_device *dev)
  {
@@ -41,5 +39,3 @@ index ca71f6c..7275761 100644
  	retval = usb_control_msg(udev,
  			usb_rcvctrlpipe(udev, IPHETH_CTRL_ENDP),
  			IPHETH_CMD_CARRIER_CHECK, /* request */
--- 
-cgit v1.1
